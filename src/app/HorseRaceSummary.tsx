@@ -89,7 +89,7 @@ export function Component({ horsePackage }: HorsePlotProps) {
     let distance = horse.sections.sort((a: any, b: any) => b.cumulated_distance - a.cumulated_distance)[0].cumulated_distance
 
     return (
-        <Card>
+        <Card className="max-w-[768px]">
             <CardHeader>
                 <CardTitle>{horse.name} : {race.event_date} :  {distance}m : {race.track_condition} </CardTitle>
                 <CardDescription>
@@ -98,7 +98,7 @@ export function Component({ horsePackage }: HorsePlotProps) {
                 </CardDescription>
             </CardHeader>
 
-            <CardContent className="grid grid-cols-2 max-h-[1024px] max-w-[768px]">
+            <CardContent className="grid grid-cols-2 max-h-[1024px] ">
                 <ChartContainer config={chartConfig}>
                     <LineChart
                         accessibilityLayer
