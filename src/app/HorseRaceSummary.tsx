@@ -98,7 +98,7 @@ export function Component({ horsePackage }: HorsePlotProps) {
                 </CardDescription>
             </CardHeader>
 
-            <CardContent className="grid grid-cols-2">
+            <CardContent className="grid grid-cols-2 max-h-[1024px] max-w-[768px]">
                 <ChartContainer config={chartConfig}>
                     <LineChart
                         accessibilityLayer
