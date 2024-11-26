@@ -106,7 +106,7 @@ function TrackStats() {
 }
 
 
-export function JTStats() {
+function JTStats() {
     return (
         <section className="h-screen w-full relative">
             {/* Top Bar */}

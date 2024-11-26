@@ -17,7 +17,7 @@ export default function RaceProgram() {
             {/* Top Bar */}
             <div className="bg-neutral-800 text-white py-4">
                 <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
-                    <h1 className="text-3xl font-bold">Today's Racing</h1>
+                    <h1 className="text-3xl font-bold">Todays Racing</h1>
 
                 </div>
             </div>

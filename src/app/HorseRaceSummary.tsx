@@ -24,7 +24,7 @@ import {
     ChartTooltip,
     ChartTooltipContent,
 } from "@/components/ui/chart"
-import { HorseJson, HorseSection } from "./page"
+import { HorseJson, HorseSection } from "./race/[race_id]/page"
 
 
 
@@ -38,7 +38,7 @@ export function HorseSummary({ horses }: HorseSummaryProps) {
         <div className="overflow-auto">
             {
                 horses.map((horse) =>
-                    < div >
+                    <div key={horse.horse_name} >
                         <h1 className="bg-black text-white text-2xl font-bold sticky top-0 z-50">{horse.horse_name}</h1>
 
                         <div>
@@ -173,7 +173,7 @@ export function Component({ horsePackage }: HorsePlotProps) {
                             {
                                 horse.sections
                                     .sort((a: any, b: any) => b.cumulated_distance - a.cumulated_distance)
-                                    .map((section: any) => <TableHead>{section.cumulated_distance}m</TableHead>)
+                                    .map((section: any) => <TableHead key={section.cumulated_distance}>{section.cumulated_distance}m</TableHead>)
                             }
                         </TableRow>
                     </TableHeader>
@@ -183,8 +183,8 @@ export function Component({ horsePackage }: HorsePlotProps) {
                             {
                                 horse.sections
                                     .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                    .map((section: any) =>
-                                        <TableCell>
+                                    .map((section: any, index) =>
+                                        <TableCell key={section.cumulated_distance + index + "time"}>
                                             <div>
                                                 {section.intermediate_time.startsWith("00:")
                                                     ? section.intermediate_time.slice(3)
@@ -208,8 +208,8 @@ export function Component({ horsePackage }: HorsePlotProps) {
                             {
                                 horse.sections
                                     .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                    .map((section: any) =>
-                                        <TableCell>
+                                    .map((section: any, index) =>
+                                        <TableCell key={section.cumulated_distance + index + "real sitance"}>
                                             {section.real_distance}
                                         </TableCell>
                                     )
@@ -220,8 +220,8 @@ export function Component({ horsePackage }: HorsePlotProps) {
                             {
                                 horse.sections
                                     .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                    .map((section: any) =>
-                                        <TableCell>
+                                    .map((section: any, index) =>
+                                        <TableCell key={section.cumulated_distance + index + "raildistnace"}>
                                             {section.avg_distance_rail}
                                         </TableCell>
                                     )
@@ -232,8 +232,8 @@ export function Component({ horsePackage }: HorsePlotProps) {
                             {
                                 horse.sections
                                     .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                    .map((section: any) =>
-                                        <TableCell>
+                                    .map((section: any, index) =>
+                                        <TableCell key={section.cumulated_distance + index + "avg speed"}>
                                             {section.avg_speed} / {section.top_speed}
                                         </TableCell>
                                     )
@@ -244,8 +244,8 @@ export function Component({ horsePackage }: HorsePlotProps) {
                             {
                                 horse.sections
                                     .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                    .map((section: any) =>
-                                        <TableCell>
+                                    .map((section: any, index) =>
+                                        <TableCell key={section.cumulated_distance + index + "avg stride"}>
                                             {section.avg_stride_freq} / {section.average_stride_length}
                                         </TableCell>
                                     )
@@ -291,7 +291,7 @@ export function SingleHorseRaceSummary({ summary }: SingleHorseRaceSummaryProps)
                         {
                             summary.horse.sections
                                 .sort((a: any, b: any) => b.cumulated_distance - a.cumulated_distance)
-                                .map((section: any) => <TableHead>{section.cumulated_distance}m</TableHead>)
+                                .map((section: any) => <TableHead key={section.cumulated_distance}>{section.cumulated_distance}m</TableHead>)
                         }
                     </TableRow>
                 </TableHeader>
@@ -301,8 +301,8 @@ export function SingleHorseRaceSummary({ summary }: SingleHorseRaceSummaryProps)
                         {
                             summary.horse.sections
                                 .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                .map((section: any) =>
-                                    <TableCell>
+                                .map((section: any, index) =>
+                                    <TableCell key={section.cumulated_distance + index + "time"}>
                                         <div>
                                             {section.intermediate_time.startsWith("00:")
                                                 ? section.intermediate_time.slice(3)
@@ -326,8 +326,8 @@ export function SingleHorseRaceSummary({ summary }: SingleHorseRaceSummaryProps)
                         {
                             summary.horse.sections
                                 .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                .map((section: any) =>
-                                    <TableCell>
+                                .map((section: any, index) =>
+                                    <TableCell key={section.cumulated_distance + index + "real sitance"}>
                                         {section.real_distance}
                                     </TableCell>
                                 )
@@ -338,8 +338,8 @@ export function SingleHorseRaceSummary({ summary }: SingleHorseRaceSummaryProps)
                         {
                             summary.horse.sections
                                 .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                .map((section: any) =>
-                                    <TableCell>
+                                .map((section: any, index) =>
+                                    <TableCell key={section.cumulated_distance + index + "raildistnace"}>
                                         {section.avg_distance_rail}
                                     </TableCell>
                                 )
@@ -350,8 +350,8 @@ export function SingleHorseRaceSummary({ summary }: SingleHorseRaceSummaryProps)
                         {
                             summary.horse.sections
                                 .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                .map((section: any) =>
-                                    <TableCell>
+                                .map((section: any, index) =>
+                                    <TableCell key={section.cumulated_distance + index + "avg speed"}>
                                         {section.avg_speed} / {section.top_speed}
                                     </TableCell>
                                 )
@@ -362,8 +362,8 @@ export function SingleHorseRaceSummary({ summary }: SingleHorseRaceSummaryProps)
                         {
                             summary.horse.sections
                                 .sort((a: any, b: any) => a.cumulated_distance - b.cumulated_distance)
-                                .map((section: any) =>
-                                    <TableCell>
+                                .map((section: any, index) =>
+                                    <TableCell key={section.cumulated_distance + index + "avg stride"}>
                                         {section.avg_stride_freq} / {section.average_stride_length}
                                     </TableCell>
                                 )

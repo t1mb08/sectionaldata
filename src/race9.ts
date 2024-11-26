@@ -19349,7 +19349,7 @@ export const race9 = [
                         ],
                         [
                             200,
-                            null
+                            0.0
                         ]
                     ],
                     "ranks": [
@@ -19382,7 +19382,7 @@ export const race9 = [
                             "rank": 8,
                             "intermediate_time": "00:00:00",
                             "section_time": "00:00:00",
-                            "avg_speed": null,
+                            "avg_speed": 0.0,
                             "top_speed": 18.68,
                             "avg_stride_freq": 2.4,
                             "average_stride_length": 7.18,

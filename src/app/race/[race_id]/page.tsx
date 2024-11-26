@@ -32,8 +32,8 @@ export type HorseSummary = {
     finish_time: string;
     result_state: string;
     result_substate: string;
-    speeds: number[][];  // Allow an array of arrays of numbers
-    ranks: Array<[number, number]>;
+    speeds: (number | null)[][];  // Allow an array of arrays of numbers
+    ranks: (number | null)[][];
     sections: SectionSummary[];
 }
 export type RaceSummaryDB = {
@@ -61,7 +61,6 @@ export type HorseSection = {
 }
 
 
-import { hell } from "@/app/data";
 import { HorseSummary } from "@/app/HorseRaceSummary";
 import {
     Card,
@@ -113,7 +112,7 @@ export default async function FirstPages({
     console.log("raceid: ", race_id);
 
     // Get the race data based on the race_id
-    const data = raceDataMap[race_id];
+    const data: HorseSection[] = raceDataMap[race_id];
 
 
     if (!data) {
@@ -191,7 +190,7 @@ const fakeTime: SectionalSummary[] = [
     }
 ]
 
-export function JTStats() {
+function JTStats() {
     return (
         <section className="h-screen w-full relative">
             {/* Top Bar */}
