@@ -1,5 +1,4 @@
 export const race5 = [
-
     {
         "horse_name": "Charlie's Case",
         "sectionals": [
@@ -19471,7 +19470,7 @@ export const race5 = [
                         ],
                         [
                             600,
-                            null
+                            0.0
                         ],
                         [
                             1000,
@@ -19479,7 +19478,7 @@ export const race5 = [
                         ],
                         [
                             800,
-                            null
+                            0.0
                         ],
                         [
                             200,
@@ -19487,7 +19486,7 @@ export const race5 = [
                         ],
                         [
                             400,
-                            null
+                            0.0
                         ]
                     ],
                     "ranks": [
@@ -19537,7 +19536,7 @@ export const race5 = [
                             "rank": 0,
                             "intermediate_time": "00:00:47.596",
                             "section_time": "00:00:00",
-                            "avg_speed": null,
+                            "avg_speed": 0.0,
                             "top_speed": 18.23,
                             "avg_stride_freq": 2.4,
                             "average_stride_length": 7.44,
@@ -19576,7 +19575,7 @@ export const race5 = [
                             "rank": 0,
                             "intermediate_time": "00:00:52.740",
                             "section_time": "00:00:00",
-                            "avg_speed": null,
+                            "avg_speed": 0.0,
                             "top_speed": 18.15,
                             "avg_stride_freq": 2.4,
                             "average_stride_length": 7.43,
@@ -19589,7 +19588,7 @@ export const race5 = [
                             "rank": 0,
                             "intermediate_time": "00:00:50.191",
                             "section_time": "00:00:00",
-                            "avg_speed": null,
+                            "avg_speed": 0.0,
                             "top_speed": 18.12,
                             "avg_stride_freq": 2.4,
                             "average_stride_length": 7.42,
